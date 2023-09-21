@@ -30,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exit **")
         else:
             b = storage.classes()[line]()
-            b.svae()
+            b.save()
             print(b.id)
 
     def do_show(self, line):
@@ -131,7 +131,7 @@ class HBNBCommand(cmd.Cmd):
                     value = attributes[attribute](value)
                 elif cast:
                     try:
-                        value = cast(value)
+                        value = cast(value)
                     except ValueError:
                         pass
                 setattr(storage.all()[key], attribute, value)
